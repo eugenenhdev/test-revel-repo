@@ -1,0 +1,47 @@
+{% render 'global-cta' %}
+
+{% schema %}
+    {
+      "name": "CTA Grid",
+      "tag": "section",
+      "class": "section-cta py-10",
+      "settings": [
+        ],
+      "max_blocks": 3,
+      "blocks": [
+        {
+          "name": "CTA Block with Menu",
+          "type": "block-1",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Heading"
+            },
+            {
+              "type": "link_list",
+              "id": "menu",
+              "label": "Menu"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Background Card"
+            },
+            {
+              "type": "checkbox",
+              "id": "hide-socials",
+              "label": "Hide social",
+              "default": true
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "CTA Grid"
+        }
+      ]
+    }
+    {% endschema %}
+    

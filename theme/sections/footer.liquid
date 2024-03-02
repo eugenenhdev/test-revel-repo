@@ -1,0 +1,61 @@
+{% render 'footer' %}
+
+{% schema %}
+    {
+      "name": "Footer",
+      "tag": "footer",
+      "class": "main-footer",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "image-mobile",
+          "label": "Logo Mobile"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Footer Menu"
+        },
+        {
+              "type": "text",
+              "id": "abng",
+              "label": "ABN Number"
+         }
+      ],
+      "max_blocks": 2,
+      "blocks": [
+        {
+          "name": "Venues",
+          "type": "venue",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Venue Name"
+            },
+            {
+              "type": "richtext",
+              "id": "description",
+              "label": "Description"
+            },
+            {
+              "type": "richtext",
+              "id": "opening-hours",
+              "label": "Opening Hours"
+            }
+          ]
+        }   
+      ],
+      "presets": [
+        {
+          "name": "Footer"
+        }
+      ]
+    }
+    {% endschema %}
+    

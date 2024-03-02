@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="105" height="106" viewBox="0 0 105 106">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(-0.309 0.497)">
+    <path id="Icon_awesome-facebook-f" data-name="Icon awesome-facebook-f" class="cls-1" d="M35.554,38.151l1.884-12.274H25.66V17.911c0-3.358,1.645-6.631,6.92-6.631h5.354V.829A65.3,65.3,0,0,0,28.43,0c-9.7,0-16.039,5.879-16.039,16.521v9.355H1.609V38.151H12.391V67.823H25.66V38.151Z" transform="translate(32.979 18.84)"/>
+    <g id="Ellipse_2" data-name="Ellipse 2" class="cls-2" transform="translate(0.309 -0.497)">
+      <ellipse class="cls-3" cx="52.5" cy="53" rx="52.5" ry="53"/>
+      <ellipse class="cls-4" cx="52.5" cy="53" rx="51" ry="51.5"/>
+    </g>
+  </g>
+</svg>

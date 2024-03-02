@@ -1,0 +1,65 @@
+{% render 'global-slider-image-text' %}
+
+{% schema %}
+    {
+      "name": "Slider Image Text",
+      "tag": "section",
+      "class": "section-slider-image-text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Second instruction"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "new-tab",
+          "label": "Open in New Tab"
+        },
+        {
+          "type": "select",
+          "id": "image-position",
+          "label": "Image Position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "Slide Image",
+          "type": "block-1",
+          "settings": [
+            {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Slide Images"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Slider Image Text"
+        }
+      ]
+    }
+{% endschema %}

@@ -1,0 +1,70 @@
+<div class="container-2xl">
+
+<div class="grid grid-cols-4 gap-10 mddn:gap-5 lgdn:grid-cols-3 mddn:grid-cols-2">
+    {% for product in collection.products %}
+        {% assign title = product.title %}
+        {% assign description = product.content %}
+        {% assign price = product.price | money %}
+        {% assign alcohol = product.metafields.product.alcoholic_beverage %}
+        {% assign hops = product.metafields.product.hops %}
+        {% assign malt = product.metafields.product.malt %}
+        {% assign bgColor = product.metafields.product.background_color %}
+        {% assign image = product.featured_image | img_url: 'master' %}
+        {% assign url = product.url %}
+        <div class="item">
+                <a class="no-underline text-black transition-opacity duration-300 hover:opacity-70" href="{{ url }}">
+                    <div class="product-image-wrapper flex justify-center items-center" {% if bgColor != blank %} style="background-color: {{ bgColor }}"
+                        {% else %} style="background-color:#fed106;"
+                        {% endif %}>
+                        <img class="product-image" src="{{ image }}" alt="{{ title }}">
+                        {% if product.available == false %}
+                            <img src="{{ 'sold-out.svg' |  asset_url }}" class="sold-out absolute">
+                        {% endif %}
+                    </div>
+                    <div class="text-center">
+                        <div class="mt-8">
+                            <h2 class="text-h4 font-bold">
+                                {{ title }}
+                            </h2>    
+                        </div>
+    
+                        <div class="mt-5">
+                              <span class="block text-h5"> {{ price }}&nbsp;16PK</span>
+                        </div>
+                    </div>
+                </a>
+        </div>
+
+    {% endfor %}
+    </div>
+</div>
+
+{% style %}
+section.section-product-list img.product-image{
+    max-height: 350px;
+}
+
+section.section-product-list img.sold-out{
+    max-height: 200px;
+}
+
+
+{% endstyle %}
+
+
+{% schema %}
+    {
+      "name": "Product List Section",
+      "tag": "section",
+      "class": "section-product-list py-20",
+      "settings": [
+
+    ],
+      "presets": [
+        {
+          "name": "Product List Section"
+        }
+      ]
+    }
+    {% endschema %}
+    

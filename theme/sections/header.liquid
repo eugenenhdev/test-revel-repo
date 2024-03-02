@@ -1,0 +1,51 @@
+{% render 'header' %}
+
+{% schema %}
+    {
+      "name": "Header",
+      "tag": "div",
+      "class": "sticky top-0 z-50 bg-white",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "desktop",
+          "label": "Logo Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile",
+          "label": "Logo Mobile"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ],
+      "max_blocks": 3,
+      "blocks": [
+        {
+          "name": "Socials",
+          "type": "socials",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "icon",
+              "label": "Social Icon"
+            },
+            {
+              "type": "url",
+              "id": "link",
+              "label": "Link"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Header"
+        }
+      ]
+    }
+    {% endschema %}
+    

@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "hello-world",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "product_list_Uhxz3J": {
+      "type": "product-list",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_list_Uhxz3J"
+  ]
+}

@@ -1,0 +1,91 @@
+{% assign title = product.title %}
+{% assign description = product.content %}
+{% assign price = product.price | money %}
+{% assign alcohol = product.metafields.product.alcoholic_beverage %}
+{% assign hops = product.metafields.product.hops %}
+{% assign malt = product.metafields.product.malt %}
+{% assign bgColor = product.metafields.product.background_color %}
+{% assign image = product.featured_image | img_url: 'master' %}
+{% assign limited = product.metafields.product.limited_release %}
+{% assign image = product.featured_image | img_url: 'master' %}
+{% assign productAvailable = product.available %} 
+
+<section class="single-product py-24 mddn:py-12 overflow-hidden">
+    <div class="container-2xl">
+            <div class="grid grid-cols-2 mddn:grid-cols-1 items-center gap-36 xxldn:gap-18 xldn:gap-10 mddn:gap-2">
+                <div class="item relative flex items-center justify-center">
+                    <div class="single-product-image relative z-20">
+                        <img src="{{ image }}" alt="{{ title }}">
+                    </div>
+                    <div class="product-image-overlay absolute inset-0 my-auto translate-x-[-50%]" style="background-color:{{ bgColor }}"></div>
+                </div>
+
+                <div class="item">
+                   <div class="product-content relative z-30 mddn:mt-[-3rem]">
+                    <h1 class="text-h2 mddn:text-[80px]  xsdn:text-h1">
+                        {{ title }}
+                    </h1>
+                    <div class="mt-8">
+                        <p class="text-[40px] xldn:text-[20px]">{{ price }} 16PK</p>
+                    </div>
+                    {% if productAvailable == true %}
+                        <div class="mt-6">
+                        <p class="text-[40px] xldn:text-[20px]">Quantity</p>
+                    </div>
+                    <div class="mt-6">
+                        Quantity Selector with Add to cart
+                    </div>
+                                                                                                                                                                                                                                                                                                       {% else  %}
+                    <div class="mt-6">
+                        <p class="text-[40px] xldn:text-[20px]">Sold Out</p>
+                    </div>
+                    <div class="mt-6">
+                       The product you are viewing is currently out of stock please come back after a day to check.
+                    </div>
+                    {% endif %}
+                    {% if description != blank %}
+                        <div class="mt-12 lgdn:mt-6 text-[30px] xldn:text-[18px]">
+                        {{ description }}
+                        </div>
+                    {% endif %}
+                    {% if alcohol != blank  %}
+                        <div class="mt-12 lgdn:mt-6 font-bold text-[30px] xldn:text-[18px]">
+                            {{ alcohol }}
+                        </div>
+                    {% endif %}
+                    {% if malt != blank  %}
+                        <div class="mt-8 lgdn:mt-6 font-bold text-[30px] xldn:text-[18px]">
+                        {{ malt }}
+                    </div>
+                    {% endif %}
+                    {% if hops != blank %}
+                        <div class="mt-8 lgdn:mt-6 font-bold text-[30px] xldn:text-[18px]">
+                        {{ hops }}
+                    </div>
+                    {% endif %}
+                   </div>
+                </div>
+            </div>
+    </div>  
+</section>
+
+
+{% style %}
+    
+
+    section.single-product .product-image-overlay{
+        max-height: 85%;
+    }
+
+    @media screen and (max-width: 991px){
+        section.single-product .single-product-image img{
+        max-height: 750px;
+        }
+        section.single-product .product-image-overlay{
+        max-height: 75%;
+        transform: translateX(0);
+        top: -25%;
+        width: 100%;
+    }
+    }
+{% endstyle %}

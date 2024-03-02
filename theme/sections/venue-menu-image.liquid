@@ -1,0 +1,35 @@
+<div class="container-2xl">
+    <div class="grid grid-cols-2 mddn:grid-cols-1">
+        <img class="w-full h-full" src="{{ section.settings.image | img_url: 'master' }}" alt={{ section.settings.image.alt }}">
+    </div>
+</div>
+
+
+{% schema %}
+    {
+      "name": "Menu Image Grid",
+      "tag": "section",
+      "class": "section-menu-image py-20",
+      "settings": [
+      ],
+      "blocks": [
+        {
+          "name": "Menu Image",
+          "type": "block-1",
+          "settings": [
+            {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Menu Image Grid"
+        }
+      ]
+    }
+    {% endschema %}
+    

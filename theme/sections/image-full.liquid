@@ -1,0 +1,25 @@
+<div class="container-full">
+    <img src="{{ section.settings.image | img_url: 'master' }}" alt={{ section.settings.image.alt }}">
+</div>
+
+{% style %}
+    section.section-image-full img{
+        min-height: 540px;
+        width: 100%;
+    }
+{% endstyle %}
+{% schema %}
+    {
+      "name": "Image Full Section",
+      "tag": "section",
+      "class": "section-image-full",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+    {% endschema %}
+    

@@ -1,0 +1,134 @@
+<div class="container-full">
+  <div class="banner-swiper swiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% assign image = block.settings.image | img_url: 'master' %}
+        {% assign headingOne = block.settings.heading-1 %}
+        {% assign headingTwo = block.settings.heading-1 %}
+        {% assign headingThree = block.settings.heading-1 %}
+        {% assign menu = block.settings.menu %}
+
+        <div class="swiper-slide">
+          <div class="section-slide relative">
+            <img src="{{  }}" alt="{{ image.alt }}">
+            <div class="overlay absolute inset-0 flex items-center">
+              <div class="container-2xl">
+                <div class="content text-white mddn:mx-auto mddn:text-center">
+                 {% if headingOne != blank %}
+                    <h1 class="text-h2">{{ headingOne }}</h1>
+                 {% endif %}
+                 {% if headingTwo != blank %}
+                    <h2 class="text-h2">{{ headingTwo }}</h1>
+                 {% endif %}
+
+                 {% if headingThree != blank %}
+                    <h3 class="text-h4">{{ headingThree }}</h1>
+                 {% endif %}
+
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      <div class="swiper-slide">
+        <div class="section-slide relative">
+          <img src="https://revel-development.myshopify.com/cdn/shop/files/partnerships-banner.jpg?v=1700186407" alt="Test">
+          <div class="overlay absolute inset-0 flex items-center">
+            <div class="container-2xl">
+              <div class="content text-white mddn:mx-auto mddn:text-center ">
+                <h1 class="text-h2 uppercase">
+                  Where it all started! Bulimba Brewpub
+                </h1>
+                <div class="button-list mt-10 mddn:mt-7 flex flex-col gap-5 mddn:items-center mddn:justify-center">
+                  <a href="" class="button button button-secondary">Make a booking</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="swiper-slide">
+        <div class="section-slide relative">
+          <img src="https://revel-development.myshopify.com/cdn/shop/files/partnerships-banner.jpg?v=1700186407" alt="Test">
+          <div class="overlay absolute inset-0 flex items-center">
+            <div class="container-2xl">
+              <div class="content text-white mddn:mx-auto mddn:text-center ">
+                <h1 class="text-h2 uppercase">
+                  Where it all started! Bulimba Brewpub
+                </h1>
+                <div class="button-list mt-10 mddn:mt-7 flex flex-col gap-5 mddn:items-center mddn:justify-center">
+                  <a href="" class="button button button-secondary">Make a booking</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="section-slide relative">
+          <img src="https://revel-development.myshopify.com/cdn/shop/files/partnerships-banner.jpg?v=1700186407" alt="Test">
+          <div class="overlay absolute inset-0 flex items-center">
+            <div class="container-2xl">
+              <div class="content text-white mddn:mx-auto mddn:text-center ">
+                <h1 class="text-h2 uppercase">
+                  Where it all started! Bulimba Brewpub
+                </h1>
+                <div class="button-list mt-10 mddn:mt-7 flex flex-col gap-5 mddn:items-center mddn:justify-center">
+                  <a href="" class="button button button-secondary">Make a booking</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+
+{% style %}
+
+
+  section.section-slider-banner .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  section.section-slider-banner img {
+    min-height: 930px;
+    object-fit: cover;
+  }
+  section.section-slider-banner .swiper-pagination-bullet {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #1c1c1c;
+  }
+
+  section.section-slider-banner .swiper-pagination {
+    bottom: 100px;
+  }
+  section.section-slider-banner .content {
+    max-width: 520px;
+  }
+  @media screen and (min-width: 1441px) {
+    section.section-slider-banner .button {
+      font-size: 50px;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    section.section-slider-banner img {
+      min-height: 500px;
+    }
+    sectio
+  }
+{% endstyle %}

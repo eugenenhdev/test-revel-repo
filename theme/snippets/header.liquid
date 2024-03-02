@@ -1,0 +1,104 @@
+
+{% assign desktopLogo = section.settings.desktop | img_url: '400x60' %}
+{% assign mobileLogo = section.settings.mobile | img_url: '160x60' %}
+{% assign menu = section.settings.menu %}
+
+<header class="main-header lg:bg-white  py-10 lgdn:py-5 relative ">
+    <div class="container-2xl">
+    <div class="flex items-center justify-between">
+        <div class="site-burger xl:hidden nav-item">
+                <div class="burger-toggle w-10 h-10 cursor-pointer flex flex-col gap-[4px] relative">
+                    <span class="inline-block h-[3px] w-full rounded-full bg-black"></span>
+                    <span class="inline-block h-[3px] w-full rounded-full bg-black"></span>
+                    <span class="inline-block h-[3px] w-full rounded-full bg-black"></span>
+                </div>
+        </div>
+        <div class="site-logo nav-item">
+            <a href="/" class="nav-logo-link">
+                <img class="lgdn:hidden xxldn:w-[20vw] xxldn:max-w-full" src="{{ desktopLogo }}" alt="{{ desktopLogo.alt}}">
+                <img class="xl:hidden" src="{{ mobileLogo }}" alt="{{ mobileLogo.alt}}">
+            </a>
+        </div>
+        
+
+        <div class="offcanvas xl:hidden fixed  hidden inset-0 nav-item">
+
+        </div>
+
+        <div class="site-nav nav-item">
+            <div class="nav-layout flex gap-12 items-center">
+                    <div class="nav-layout-item lgdn:hidden ">
+                        <nav class="nav-list flex gap-14 xldn:gap-10">
+                            <!-- Main menu -->
+                            {% for link in menu.links -%}
+                            <div class="nav-list-item {% if link.links.size > 0 %}dropdown{%- endif -%}">
+                                {% if link.links.size == 0 %}
+                                <a class="font-medium uppercase text-[20px] xldn:text-[16px] transition-colors duration-300 hover:text-accent {% if link.active  %} text-accent font-bold{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+                                    {% elsif link.links.size > 0  %}
+                                <span  data-dropdown-trigger="click" data-dropdown-offset-distance="55" data-dropdown-toggle="{{ link.title }}" class="inline-block cursor-pointer{% if link.active  %} text-accent font-bold{% endif %} font-medium uppercase text-[20px] xldn:text-[16px] transition-colors duration-300 hover:text-accent" >{{ link.title }}</span>
+                                  
+                                        
+                                    <div id="{{ link.title }}"  class="dropdown-menu border-t-8 border-slate-400 border-solid bg-white z-30 absolute gap-24 xldn:gap-12 flex justify-center items-center w-full py-14 hidden">
+                                        {% if link.title != 'Venues' %}
+                                              {% for childLink in link.links %}
+                                                <a href="{{ childLink.url }}" class="font-bold text-[20px] xldn:text-[16px] transition-colors duration-300 hover:text-accent">{{ childLink.title }}</a>
+                                                {% endfor %}
+                                        
+                                         {% elsif link.title == 'Venues'  %}
+                                            <div class="container-2xl">
+                                                <div class="mega-menu grid grid-cols-2">
+                                                    {% for childLink in link.links %}
+                                                            <div class="item col-auto">
+                                                                <div class="mega-menu-content">
+                                                                    <span class="inline-block uppercase mb-3 font-bold text-[20px] xldn:text-[16px]">{{ childLink.title }}</span> 
+                                                                    <div class="mega-menu-nav-list flex flex-col gap-2">
+                                                                       
+                                                                            {% for grandchildLink in childLink.links %}
+                                                                        <a href="{{ grandchildLink.url }}" class="text-[20px] xldn:text-[18px] transition-colors duration-300 hover:text-accent">{{ grandchildLink.title  }}</a>
+                                                                    {% endfor %}
+                                                            
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {% endfor %}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                 
+                                    </div>
+                                {% endif %}
+                              </div>
+                            {%- endfor %}
+                        </nav>
+                    </div>
+
+                    <div class="nav-layout-item">
+                        <div id="myCart" class="cart-wrapper cursor-pointer">
+                            <img src="{{ 'cart-icon.svg' |  asset_url }}" alt>
+                                {% if cart.item_count > 0 %}
+                                    <span class="cart-count">{{ cart.item_count }}</span>
+                                {% endif %}
+                        </div>
+                    </div>
+                    <div class="nav-layout-item lgdn:hidden ">
+                       <div class="flex gap-2">
+                        {% for block in section.blocks %}
+                            {% assign icon = block.settings.icon | img_url: '40x40' %}
+                            {% assign link = block.setting.link %}
+
+                            <a href="{{ link }}" class="block" target="_blank">
+                             <img class="w-10 max-w-full" src="{{ icon }}" alt="{{ icon.alt }}">
+                            </a>
+                    {% endfor %}
+                       </div>
+                    </div>
+            </div>
+     </div>
+    </div>
+</div>
+</header>
+
+
+<style>
+
+</style>

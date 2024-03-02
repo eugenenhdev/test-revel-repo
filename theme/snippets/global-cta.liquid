@@ -1,0 +1,50 @@
+<div class="container-2xl">
+    <div class="grid grid-cols-3 mddn:grid-cols-1 gap-10 ">
+        {% for block in section.blocks %}
+            {% assign title = block.settings.title %}
+            {% assign image = block.settings.image | img_url: 'master' %}
+            {% assign menu = block.settings.menu %}
+            {% assign hideSocials = block.settings.hide-socials %}
+
+            <div class="item h-full">
+            <div class="cta-card relative overflow-hidden bg-cover bg-center bg-no-repeat h-full w-full text-white round-[50px] py-[100px] px-[80px] lgdn:py-[50px] lgdn:px-[40px] mddn:py-[100px] mddn:px-[20px]" style="background-image: url('{{ image }}')">
+                <div class="overlay bg-black bg-opacity-35 absolute inset-0 z-10"></div>  
+            <div class="content relative z-20 mddn:text-center mddn:flex mddn:flex-col mddn:items-center mddn: justify-center">
+                    {% if title %}
+                        <h2 class="text-[67px] xldn:text-[40px] mddn:text-[36px] leading-none">{{ title}}</h2>
+                    {% endif %}
+
+                        {% if menu != blank %}
+                            <div class="flex flex-col gap-5 mt-5">
+                                {% for link in menu.links %}
+                                    <a class="button button-secondary xldn:py-2 xldn:text-[20px]" href="{{ link.url }}">{{ link.title }}</a>
+                                {% endfor %}
+                             </div>
+                        {% endif %}
+                      
+                   {% if  hideSocials == false %}
+                    <div class="mt-7 flex gap-2">
+                        <a href="#" target="_blank">
+                            <img class="max-w-10" src="{{ 'instagram-white.svg' | asset_url }}" alt="instagram">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img class="max-w-10" src="{{ 'facebook-white.svg' | asset_url }}" alt="facebook">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img class="max-w-10" src="{{ 'youtube-white.svg' | asset_url }}" alt="youtube">
+                        </a>
+                    </div>
+                   {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+</div>
+
+{% style %}
+section.section-cta .cta-card{
+    border-radius: 50px;
+}
+{% endstyle %}

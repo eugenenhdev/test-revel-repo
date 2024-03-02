@@ -1,0 +1,105 @@
+{% assign image = section.settings.image | img_url: 'master' %}
+
+<div class="container-2xl">
+    <div class="banner-content max-w-3xl text-white mddn:mx-auto mddn:text-center">
+        {% for block in section.blocks %}
+            {% case block.type %}
+              {% when "heading-element" %}
+                {% assign heading = block.settings.heading %}
+                {% assign headingElement = block.settings.heading-element %}
+                {% assign headingSize = block.settings.heading-size %}
+                {% case headingElement %}
+                    {% when 'h1' %}
+                        <h1 class="text-{{ headingSize }}">
+                            {{ heading }}
+                         </h1>
+                         {% when 'h2' %}
+                            <h2 class="text-{{ headingSize }}">
+                                {{ heading }}
+                             </h2>
+        
+                             {% when 'h3' %}
+                                <h3 class="text-{{ headingSize }}">
+                                    {{ heading }}
+                                 </h3>
+        
+                                 {% when 'h4' %}
+                                    <h4 class="text-{{ headingSize }}">
+                                        {{ heading }}
+                                     </h4>
+        
+                                     {% when 'h5' %}
+                                        <h5 class="text-{{ headingSize }}">
+                                            {{ heading }}
+                                         </h5>
+        
+                                         {%when 'h6' %}
+                                            <h6 class="text-{{ headingSize }}">
+                                                {{ heading }}
+                                             </h6>
+                {% endcase %}
+              
+                   
+              {% when 'link-element' %}
+                {% assign buttonId = block.settings.link-id %}
+                {% assign buttonText = block.settings.link-text %}
+                {% assign buttonLink = block.settings.link %}
+                {% assign buttonNewTab = block.settings.new-tab %}
+                <div class="mt-5 lgdn:mx-auto lgdn:flex justify-center items-center">
+                    <a href="{{ buttonLink }}" 
+                    {% if buttonNewTab == true %}
+                        target="_blank" 
+                    {% endif %}
+                    {% if buttonId != blank %}
+                        id="{{ buttonId }}"
+                    {% endif %}
+                   class="button button-secondary">
+                        {{ buttonText }}
+                    </a>
+                </div>
+              
+              {% when 'richtext-element' %}
+            {% endcase %}
+          {% endfor %}
+    </div>
+</div>
+
+
+  
+
+{% style %}
+
+section.section-static-banner{
+    background-image: url({{ image }});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 1280px;
+    max-height: 1280px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+section.section-static-banner:before{
+    content: '';
+    position: absolute;
+    background-color: rgba(0,0,0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+section.section-static-banner .container-2xl{
+    position: relative;
+    z-index: 3;
+}
+
+@media screen and (max-width: 1199px){
+    section.section-static-banner{
+        min-height: 700px;
+        max-height: 700px;
+    }
+}
+
+{% endstyle %}

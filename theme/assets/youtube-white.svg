@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="106" height="106" viewBox="0 0 106 106">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_3" data-name="Group 3" transform="translate(0.381 0.497)">
+    <path id="Icon_awesome-youtube" data-name="Icon awesome-youtube" class="cls-1" d="M71.883,12.459a9.09,9.09,0,0,0-6.4-6.438C59.845,4.5,37.222,4.5,37.222,4.5S14.6,4.5,8.958,6.022a9.09,9.09,0,0,0-6.4,6.438C1.05,18.137,1.05,29.985,1.05,29.985s0,11.848,1.512,17.526a8.955,8.955,0,0,0,6.4,6.335c5.642,1.522,28.265,1.522,28.265,1.522s22.623,0,28.265-1.522a8.955,8.955,0,0,0,6.4-6.335c1.512-5.678,1.512-17.526,1.512-17.526s0-11.848-1.512-17.526ZM29.823,40.742V19.228L48.732,29.985,29.823,40.742Z" transform="translate(15.529 22.818)"/>
+    <g id="Ellipse_3" data-name="Ellipse 3" class="cls-2" transform="translate(-0.381 -0.497)">
+      <circle class="cls-3" cx="53" cy="53" r="53"/>
+      <circle class="cls-4" cx="53" cy="53" r="51.5"/>
+    </g>
+  </g>
+</svg>

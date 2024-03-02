@@ -1,0 +1,95 @@
+
+
+
+
+<div class="container-full">
+        {% for block in section.blocks %}
+            {% assign heading = block.settings.title %}
+            {% assign description = block.settings.description %}
+            {% assign image = block.settings.image | img_url: 'master' %}
+            {% assign imageAlt = block.settings.image.alt %}
+            {% assign linkText = block.settings.link %}
+            {% assign link = block.settings.link %}
+            {% assign newTab = block.settings.new-tab %}
+            {% assign imagePosition = block.settings.image-position %}
+            {% if imagePosition == 'right' %}
+                <div class="[&:not(:last-child)]:mb-10 grid grid-cols-[0.65fr_1.35fr] mddn:grid-cols-[1fr] items-center justify-self-center">
+                    <div class="item">
+                            <div class="content p-16 lgdn:p-10 xsdn:p-5">
+                                    {% if heading != blank %}
+                                        <h2 class="text-h3">
+                                            {{ heading }}
+                                        </h2>
+                                        {% else %}
+                                        <h2 class="text-h3">
+                                            Section Heading
+                                        </h2>
+                                    {% endif %}
+                                {% if description != blank%}
+                                <div class="mt-20 mddn:mt-10">
+                                        <p>
+                                             {{ description }}
+                                        </p>
+                                        {% else %}
+                                        <p>
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, recusandae nemo. Totam magnam obcaecati sunt asperiores, dolore commodi rerum natus, ipsa ducimus reiciendis quaerat enim consequuntur deserunt. Nesciunt, dolorem. Vero.
+                                        </p>
+                                    {% endif %}
+                                   {% if link != blank and linkText != blank %}
+                                   <a href="{{ link }}" {% if newTab == true %}target="_blank" {% endif %}class="button mt-4">{{ linkText }}</a>
+                                   {% else %}
+                                   <a href="#" class="button mt-4">Book Now</a>
+                                   {% endif %}
+                                </div>
+                             
+                                
+                            </div>
+                            <div class="item">
+                            {% if image != blank %}
+                                <div class="image-wrapper">
+                                    <img src="{{ image }}" alt="{{ imageAlt }}">
+                                </div>
+                            {% endif %}
+                    </div>
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="[&:not(:last-child)]:mb-10  grid grid-cols-[1.35fr_0.65fr] mddn:grid-cols-[1fr] items-center justify-self-center">
+                    <div class="item">
+                        {% if image != blank %}
+                            <div class="image-wrapper">
+                                <img src="{{ image }}" alt="{{ imageAlt }}">
+                            </div>
+                        {% endif %}
+                        </div>  
+                <div class="item mddn:order-first">
+                            <div class="content p-16 lgdn:p-10 xsdn:p-5">
+                                    {% if heading != blank %}
+                                        <h2 class="text-h3">
+                                            {{ heading }}
+                                        </h2>
+                                        {% else %}
+                                        <h2 class="text-h3">
+                                            Section Heading
+                                        </h2>
+                                    {% endif %}
+                                {% if description != blank%}
+                                <div class="mt-20 mddn:mt-10">
+                                        <p>
+                                             {{ description }}
+                                        </p>
+                                        {% else %}
+                                        <p>
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, recusandae nemo. Totam magnam obcaecati sunt asperiores, dolore commodi rerum natus, ipsa ducimus reiciendis quaerat enim consequuntur deserunt. Nesciunt, dolorem. Vero.
+                                        </p>
+                                    {% endif %}
+                                    <a href="" class="button mt-4">Book Now</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+            {% endif %}
+        {% endfor %}
+</div>

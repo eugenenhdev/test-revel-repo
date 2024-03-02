@@ -1,0 +1,43 @@
+<div class="container-full">
+    <div class="grid grid-cols-2 lgdn:grid-cols-1 gap-10 ">
+        {% for block in section.blocks %}
+            {% assign title = block.settings.title %}
+            {% assign image = block.settings.image | img_url: 'master' %}
+            {% assign description = block.settings.description %}
+            {% assign menu = block.settings.menu %}
+            {% assign columnFull = block.settings.column-full %}
+        <div class="item {% if columnFull == true %}col-span-full{% endif %}"> 
+                <div class="image-wrapper relative overflow-hidden" >
+                        {% if image != blank %}
+                            <img class="w-full h-full absolute inset-0 object-cover" src="{{ image }}" alt="{{ title }}">
+                        {% endif %}
+                        <div class="overlay bg-black bg-opacity-50 absolute inset-0 z-10"></div>
+                        <div class="content flex relative z-20  items-start lgdn:items-center lgdn:justify-center lgdn:text-center inset-0 text-white  py-[350px] px-[150px] xxldn:py-[200] xxldn:px-[100] lgdn:py-[70px] lgdn:px-[70px]  mddn:py-[40px] mddn:px-[40px] xsdn:px-[20px]">
+                          <div class="inner-content max-w-[450px] lgdn:text-center">
+                            {% if title != blank %}
+                                {% if columnFull == true %}\
+                                    <h2 class="text-h1 ">{{ title }} </h2>
+                                    {% else %}
+                                    <h2 class="text-h3 ">{{ title }} </h2>
+                                {% endif %}
+                              
+                              {% endif %}
+                            {% if description != blank %}
+                                <div class="mt-12 lgdn:mt-8 lgdn:text-[16px]">
+                                    {{ description }}
+                                  </div>
+                            {% endif %}
+    
+                           <div class="flex flex-col gap-5 mt-10 lgdn:items-center lgdn:justify-center">
+                            {% for link in menu.links %}
+                                <a class="button button-secondary xldn:py-2 xldn:text-[20px]" href="{{ link.url }}">{{ link.title }}</a>
+                            {% endfor %}
+                           </div>
+                          </div>
+                        </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{
+  "src/entrypoints/base.css": {
+    "file": "base-0ed6c93c.css",
+    "isEntry": true,
+    "src": "src/entrypoints/base.css"
+  },
+  "src/entrypoints/index.js": {
+    "file": "index-281b0674.js",
+    "isEntry": true,
+    "src": "src/entrypoints/index.js"
+  }
+}

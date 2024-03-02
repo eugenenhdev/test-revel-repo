@@ -1,0 +1,18 @@
+{% assign heading = section.settings.heading %}
+{% assign description = section.settings.description %}
+{% assign image = section.settings.image | img_url: 'master' %}
+{% assign imageAlt = section.settings.image.alt %}
+{% assign link = section.settings.link %}
+{% assign icon = section.settings.icon | img_url: '32x32' %}
+{% assign color = section.settings.color %}
+{% assign newTab = section.settings['new-tab'] %}
+{% assign imagePosition = section.settings['image-position'] %}
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'block-1' %}
+
+    {% when 'block-2' %}
+
+  {% endcase %}
+{% endfor %}

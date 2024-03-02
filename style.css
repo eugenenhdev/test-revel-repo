@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/bebas-neue.eot?v=1699577661');
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/bebas-neue.eot?v=1699577661?#iefix')
+        format('embedded-opentype'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/bebas-neue.woff?v=1699577661')
+        format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/bebas-neue.woff?v=1699577661')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Bold.eot?v=1699578095');
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Bold.eot?v=1699578095?#iefix')
+        format('embedded-opentype'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Bold.woff2?v=1699578092')
+        format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Bold.woff?v=1699578093')
+        format('woff'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Bold.ttf?v=1699578095')
+        format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Light.eot?v=1699578095');
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Light.eot?v=1699578095?#iefix')
+        format('embedded-opentype'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Light.woff2?v=1699578093')
+        format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Light.woff?v=1699578093')
+        format('woff'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Light.ttf?v=1699578095')
+        format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Medium.eot?v=1699578095');
+    src: url('Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Medium.woff2?v=1699578093')
+        format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Medium.woff?v=1699578093')
+        format('woff'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Medium.ttf?v=1699578095')
+        format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Regular.eot?v=1699578095');
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Regular.eot?v=1699578095?#iefix')
+        format('embedded-opentype'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Regular.woff2?v=1699578093')
+        format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Regular.woff?v=1699578094')
+        format('woff'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Regular.ttf?v=1699578095')
+        format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Agharti Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/agharti-bold.eot?v=1708272059');
+    src: url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/agharti-bold.woff2?v=1708272059?#iefix')
+        format('embedded-opentype'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/Montserrat-Regular.woff2?v=1699578093')
+        format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/agharti-bold.woff?v=1708272059')
+        format('woff'),
+      url('https://cdn.shopify.com/s/files/1/0631/0723/5998/files/agharti-bold.ttf?v=1708272060')
+        format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    @apply h-full bg-surface font-body text-base text-black antialiased;
+  }
+
+  model-viewer {
+    @apply aspect-square h-fit;
+  }
+  p {
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    p {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  h1,
+  h2 {
+    @apply font-heading font-semibold;
+  }
+
+  p > span {
+    @apply rounded bg-secondary/20 px-2 py-1 font-mono text-lg font-semibold text-secondary;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    font-family: 'Agharti';
+  }
+  h1 {
+    font-size: 80px;
+    line-height: 1.25em;
+  }
+  h2 {
+    font-size: 60px;
+    line-height: 1.25em;
+  }
+  h3 {
+    font-size: 40px;
+    line-height: 1.25em;
+  }
+  h4 {
+    font-size: 32px;
+    line-height: 1.25em;
+  }
+  h5 {
+    font-size: 24px;
+    line-height: 1.25em;
+  }
+  h6 {
+    font-size: 22px;
+    line-height: 1.25em;
+  }
+
+  @media screen and (min-width: 1440px) {
+    h1 {
+      font-size: 140px;
+      line-height: 1em;
+    }
+    h2 {
+      font-size: 100px;
+    }
+    h3 {
+      font-size: 60px;
+    }
+    h4 {
+      font-size: 40px;
+    }
+    h5 {
+      font-size: 30px;
+    }
+    h6 {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    h1 {
+      font-size: 36px;
+    }
+    h2 {
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 28px;
+    }
+    h4 {
+      font-size: 26px;
+    }
+  }
+}
+
+@layer components {
+  .container-2xl{
+    
+    max-width: 1640px;
+    @apply mx-auto w-full px-10 mddn:px-5;
+  }
+  a.button,
+  button {
+    font-family: 'Agharti';
+    letter-spacing: 2px;
+  }
+  .button,
+  button {
+    @apply flex max-w-80 items-center justify-center  rounded-[100px] bg-black  px-16 py-4 text-3xl uppercase text-white transition-colors duration-300 ease-in-out hover:bg-accent hover:text-black mddn:text-2xl mddn:py-3;
+  }
+
+  .button-primary {
+    @apply button bg-black text-white hover:bg-accent hover:text-black;
+  }
+
+  .button-secondary {
+    @apply button bg-white text-black hover:bg-tertiary hover:text-accent;
+  }
+
+  .card {
+    background-image: var(--gradient);
+    background-size: 500%;
+    background-position: 100%;
+    transition: background-position 3s;
+    @apply ease-wiggle;
+  }
+
+  .card:is(:hover, :focus-within) {
+    background-position: 0;
+  }
+}
+
+@layer utilities {
+  .text-h1 {
+    font-size: 80px;
+  }
+  .text-h2 {
+    font-size: 60px;
+  }
+  .text-h3 {
+    font-size: 40px;
+  }
+  .text-h4 {
+    font-size: 32px;
+  }
+  .text-h5 {
+    font-size: 24px;
+  }
+  .text-h6 {
+    font-size: 22px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .text-h1 {
+      font-size: 140px;
+    }
+    .text-h2 {
+      font-size: 90px;
+    }
+    .text-h3 {
+      font-size: 60px;
+    }
+    .text-h4 {
+      font-size: 40px;
+    }
+    .text-h5 {
+      font-size: 30px;
+    }
+    .text-h6 {
+      font-size: 24px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .text-h1 {
+      font-size: 50px;
+    }
+    .text-h2 {
+      font-size: 40px;
+    }
+    .text-h3 {
+      font-size: 32px;
+    }
+    .text-h4 {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .text-h1 {
+      font-size: 36px;
+    }
+    .text-h2 {
+      font-size: 32px;
+    }
+    .text-h3 {
+      font-size: 28px;
+    }
+    .text-h4 {
+      font-size: 26px;
+    }
+  }
+}

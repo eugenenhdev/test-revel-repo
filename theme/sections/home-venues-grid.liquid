@@ -1,0 +1,50 @@
+{% render 'home-venues-grid' %}
+
+{% schema %}
+    {
+      "name": "Home Venue Grid",
+      "tag": "section",
+      "class": "section-home-venue-grid py-20",
+      "settings": [
+      ],
+      "blocks": [
+        {
+          "name": "Item",
+          "type": "block-1",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Heading"
+            },
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "richtext",
+              "id": "description",
+              "label": "Description"
+            },
+            {
+              "type": "link_list",
+              "id": "menu",
+              "label": "Menu"
+            },
+            {
+              "type": "checkbox",
+              "id": "column-full",
+              "label": "Full Column"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Home Venue Grid"
+        }
+      ]
+    }
+    {% endschema %}
+    

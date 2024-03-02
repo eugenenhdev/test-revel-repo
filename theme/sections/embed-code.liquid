@@ -1,0 +1,27 @@
+<div class="container-2xl">
+    <div class="embed-code">
+        {{ section.settings.embed }}
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Embed Code Element",
+      "tag": "section",
+      "class": "section-embed-code py-20",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "embed",
+          "label": "Paste Embed Code Here"
+        }
+        
+      ],
+      "presets": [
+        {
+          "name": "Embed Code Element"
+        }
+      ]
+    }
+    {% endschema %}
+    

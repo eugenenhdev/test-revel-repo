@@ -1,0 +1,67 @@
+{% assign image = section.settings.image | img_url: 'master' %}
+{% assign imageMobile = section.settings.image-mobile | img_url: 'master' %}
+{% assign footerMenu = section.settings.menu  %}
+
+<div class="container-2xl">
+    <div class="grid grid-cols-[0.65fr_1.35fr_1fr_1fr] xldn:grid-cols-[0.65fr_1fr_1fr_1fr] lgdn:grid-cols-[1fr_1fr_1fr] mddn:grid-cols-2 mddn:grid-rows-2 xsdn:grid-cols-1">
+    <div class="item lgdn:col-span-3 lgdn:flex lgdn:justify-center  lgdn:mb-5 mddn:justify-start mddn:col-span-1 mddn:flex mddn:flex-col">
+        <a href="/" class="footer-logo-link transition-opacity duration-300 hover:opacity-50">
+            <img class="mddn:hidden" src="{{ image }}" alt="{{ image.alt }}">
+            <img class="hidden mddn:block" src="{{ imageMobile }}" alt="{{ imageMobile.alt }}">
+        </a>
+        <div class="footer-nav flex flex-col gap-3 hidden mddn:flex mt-10">
+            {% for link in footerMenu.links -%}
+                <a class="inline-block text-[20px] mddn:text-[18px] transition-colors duration-300 hover:text-accent" href="{{ link.url }}">{{ link.title }}</a>
+              {%- endfor %}
+        </div>
+    </div>
+    <div class="item mddn:col-span-1 mddn:row-start-2 mddn:row-end-4 mddn:hidden">
+            <div class="footer-nav flex flex-col gap-3 mddn:hidden">
+                {% for link in footerMenu.links -%}
+                    <a class="inline-block text-[20px] mddn:text-[18px] transition-colors duration-300 hover:text-accent" href="{{ link.url }}">{{ link.title }}</a>
+                  {%- endfor %}
+            </div>
+    </div>
+    {% for block in section.blocks %}
+        {% assign venueTitle = block.settings.title %}
+        {% assign description = block.settings.description %}
+        {% assign openingHours = block.settings.opening-hours %}
+
+        <div class="item mddn:col-start-2 mddn:col-end-4 mddn:row-span-1 xsdn:col-start-1 xsdn:col-end-2">
+            <div class="footer-content venue-{{ venueTitle | downcase  }}">
+            <span class="text-[30px] font-bold uppercase text-accent">
+                {{ venueTitle }}
+            </span>
+            <div class="mt-5 text-[15px]">
+                {{ description }}
+            </div>
+            <div class="mt-12">
+                <p class="uppercase font-bold font-family-body text-[15px] text-accent">Open Hours</p>
+                <div class="mt-5 text-[15px]">
+                    {{ openingHours }}
+                </div>
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+
+{% style %}
+    footer{
+        background-color: #372e2c;
+        padding-top: 90px;
+        padding-bottom: 90px;
+        color: #fff;
+    }
+    footer .footer-content .mt-12,
+    footer .footer-content .mt-5,{
+        line-height: 1.5em;
+    }
+    footer .footer-content .mt-12 p,
+    footer .footer-content .mt-5 p{
+    font-size: 15px !important;
+    }
+
+{% endstyle %}

@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "product_list_EWdYcY": {
+      "type": "product-list",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "product_list_EWdYcY"
+  ]
+}

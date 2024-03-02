@@ -1,0 +1,83 @@
+{% assign title = section.settings.title %}
+{% assign subheading = section.settings.subheading %}
+{% assign description = section.settings.description %}
+{% assign image = section.settings.image | img_url: 'master' %}
+{% assign imageAlt = section.settings.image.alt %}
+{% assign link = section.settings.link %}
+{% assign icon = section.settings.icon | img_url: '32x32' %}
+{% assign color = section.settings.color %}
+{% assign newTab = section.settings['new-tab'] %}
+{% assign imagePosition = section.settings['image-position'] %}
+
+
+
+<div class="container-2xl ">
+    <div class="heading-wrapper">
+        {% if subheading != blank %}
+            <h3 class="text-h2">{{ subheading }}</h2>
+        {% endif %}
+        {% if title != blank %}
+            <h2 class="text-h1">{{ title }}</h2>
+        {% endif %}
+    </div>
+
+    <div class="grid grid-cols-2 smdn:grid-cols-1 gap-10 mt-20 smdn:mt-10">
+        {% for block in section.blocks %}
+                {% assign schedule = block.settings.schedule %}
+                {% assign title = block.settings.title %}
+                {% assign image = block.settings.image | img_url: 'master'%}
+                {% assign description = block.settings.description %}
+                {% assign notes = block.settings.notes %}
+
+                <div class="item">
+                        <img src="{{ image }}" alt="{{ image.alt }}">
+                        <div class="mt-9">
+                            {% if schedule != blank %}
+                                <p class="font-bold text-[30px] mddn:text-[20px] uppercase">{{ schedule }}</p>
+                            {% else %}
+                                <p class="font-bold text-[30px] mddn:text-[20px] uppercase">Event Schedule</p>
+                            {% endif %}
+
+                            {% if title != blank %}
+                                <h4 class="text-h3 font-bold">{{ title }}</h4>
+                            {% else %}
+                                <h4 class="text-h3 font-bold">Event Special <span class="text-accent">Title</span></h4>
+                            {% endif %}
+                        </div>
+                        {% if description != blank %}
+                        <div class="mt-8">
+                            
+                                <p class="uppercase text-[30px] mddn:text-[22px] font-bold">
+                                {{ description }}
+                                </p>
+                                </div>
+                            {% else %}
+                            <div class="mt-8">
+                                <p class="uppercase text-[30px] mddn:text-[22px] font-bold">
+                               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore sit quam vel veniam tenetur doloribus?
+                             </p>
+                             </div>
+                            {% endif %}
+                           
+                            {% if notes != blank %}
+                        <div class="mt-2">
+                         
+                            <p class="text-[20px] mddn:text-[16px]">
+                                    {{ notes }}
+                            </p>
+                            </div>
+                            {% else %}
+                            <div class="mt-2">
+                            <p class="text-[20px] mddn:text-[16px]">
+                                *Additional Notes
+                            </p>
+                            </div>
+                            {% endif %}
+                        
+
+                </div>
+        {% endfor %}
+        
+     
+    </div>
+</div>
